@@ -1,0 +1,17 @@
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--button-height);
+  padding-inline: 10px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--background-color);
+  color: var(--font-color);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--font-color);
+    color: var(--background-color);
+  }
+}

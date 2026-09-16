@@ -41,3 +41,20 @@ body {
   color: var(--font-color);
   background-color: var(--background-color);
 }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  height: 0;
+}
+
+.disabled-transitions,
+.disabled-transitions * {
+  transition: none !important;
+}

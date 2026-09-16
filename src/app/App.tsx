@@ -3,9 +3,11 @@ import { AppRouter } from "./AppRouter";
 
 export const App = () => {
   return (
-    <div>
+    <div className="app">
       <Navbar />
-      <AppRouter />
+      <div className="content">
+        <AppRouter />
+      </div>
     </div>
   );
 };

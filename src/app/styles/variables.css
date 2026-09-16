@@ -10,10 +10,10 @@
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family);
 
   --input-height: 30px;
-  --button-height: 30px;
+  --button-height: 40px;
   --border-radius: 5px;
 
-  --navbar-height: 50px;
+  --navbar-height: 60px;
 
   --transition-duration: 0.2s;
 }
