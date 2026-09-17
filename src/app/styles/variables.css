@@ -14,6 +14,13 @@
   --border-radius: 5px;
 
   --navbar-height: 60px;
+  --footer-height: 60px;
+  --toolbar-gap: 10px;
+  
+  --sidebar-width: 300px;
+  --sidebar-width-collapsed:  60px;
+  --sidebar-height-mobile: 200px;
+  --sidebar-height-mobile-collapsed: 60px;
 
   --transition-duration: 0.2s;
 }

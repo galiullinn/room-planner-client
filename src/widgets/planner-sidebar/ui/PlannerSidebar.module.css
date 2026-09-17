@@ -1,0 +1,34 @@
+.plannerSidebar {
+  width: var(--sidebar-width);
+  background-color: var(--element-color);
+  transition: width 0.2s ease, height 0.2s ease;
+  touch-action: none;
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+
+.sidebarHeader {
+  padding: 10px;
+}
+
+.sidebarContent {
+  overflow-y: auto;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .plannerSidebar {
+    width: 100%;
+    height: var(--sidebar-height-mobile);
+  }
+
+  .collapsed {
+    height: var(--sidebar-height-mobile-collapsed);
+  }
+
+  .toggleButton {
+    transform: rotate(90deg);
+  }
+}

@@ -1,3 +1,7 @@
+import { PlannerViewport } from "@/widgets/planner-viewport";
+import { PlannerSidebar } from "@/widgets/planner-sidebar";
+import { PlannerToolbar } from "@/widgets/planner-toolbar";
+import { PlannerFooter } from "@/widgets/planner-footer";
 import styles from "./PlannerPage.module.css";
 
 interface PlannerPageProps {
@@ -9,7 +13,10 @@ const PlannerPage = (props: PlannerPageProps) => {
 
   return (
     <div className={`${styles.plannerPage} ${className ?? ""}`}>
-      <h1>Планнер</h1>
+      <PlannerViewport className={styles.plannerViewport} />
+      <PlannerSidebar className={styles.plannerSidebar} />
+      <PlannerToolbar className={styles.plannerToolbar} />
+      <PlannerFooter className={styles.plannerFooter} />
     </div>
   );
 };
