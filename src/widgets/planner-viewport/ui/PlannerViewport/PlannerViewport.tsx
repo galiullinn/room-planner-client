@@ -2,6 +2,7 @@ import { Grid, useViewMode } from "@/entities/scene";
 import { Canvas } from "@react-three/fiber";
 import { Scene2D } from "../Scene2D/Scene2D";
 import { Scene3D } from "../Scene3D/Scene3D";
+import { ObjectList, selectObject } from "@/entities/object";
 import styles from "./PlannerViewport.module.css";
 
 interface PlannerViewportProps {
@@ -15,11 +16,13 @@ export const PlannerViewport = (props: PlannerViewportProps) => {
   return (
     <Canvas 
       className={`${styles.plannerViewport} ${className ?? ""}`}
+      onPointerMissed={() => selectObject(null)}
     >
       {viewMode === "2d" ? <Scene2D /> : <Scene3D />}
       <ambientLight intensity={0.6} />
       <directionalLight position={[10, 15, 10]} intensity={1.2} />
       <Grid />
+      <ObjectList />
     </Canvas>
   );
 };
