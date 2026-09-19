@@ -22,5 +22,7 @@
   --sidebar-height-mobile: 200px;
   --sidebar-height-mobile-collapsed: 60px;
 
+  --overlay-color: rgba(0 0 0 /30%);
+
   --transition-duration: 0.2s;
 }

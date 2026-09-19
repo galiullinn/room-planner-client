@@ -13,7 +13,11 @@ export const PrimitiveRender = (props: PrimitiveRenderProps) => {
       {data.shape === "sphere" && <sphereGeometry args={[0.5, 32, 32]} />}
       {data.shape === "cylinder" && <cylinderGeometry args={[0.5, 0.5, 1, 32]} />}
       {data.shape === "cone" && <coneGeometry args={[0.5, 1, 32]} />}
-      <meshBasicMaterial color={data.color} />
+      <meshStandardMaterial
+        color={data.color}
+        roughness={0.35}
+        metalness={0.1}
+      />
     </>
   );
 };

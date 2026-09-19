@@ -1,9 +1,10 @@
 export { Grid } from "./ui/Grid";
-export { 
-  useViewMode, 
+export {
+  useViewMode,
   toggleViewMode,
   useGridVisible,
   toggleGridVisible,
   useTransformMode,
   setTransformMode,
 } from "./model/scene.store";
+export type { TransformMode, ViewMode } from "./model/types";
