@@ -6,4 +6,5 @@
   width: 100%;
   height: var(--navbar-height);
   padding-inline: 20px;
+  background-color: var(--element-color);
 }
