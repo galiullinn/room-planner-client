@@ -1,0 +1,60 @@
+.plannerPage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.plannerViewport {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  z-index: 0;
+}
+
+.plannerSidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: var(--footer-height);
+  z-index: 10;
+}
+
+.plannerFooter {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+}
+
+.plannerToolbar {
+  position: absolute;
+  left: var(--toolbar-gap);
+  bottom: calc(var(--footer-height) + var(--toolbar-gap));
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .plannerSidebar {
+    top: auto;
+    bottom: var(--footer-height);
+    left: 0;
+    right: 0;
+  }
+
+  .plannerToolbar {
+    bottom: calc(
+      var(--footer-height) + 
+      var(--sidebar-height-mobile) + 
+      var(--toolbar-gap)
+    );
+    transition: bottom 0.2s ease;
+  }
+
+  .sidebarCollapsed .plannerToolbar {
+    bottom: calc(
+      var(--footer-height) + 
+      var(--sidebar-height-mobile-collapsed) + 
+      var(--toolbar-gap)
+    );
+  }
+}

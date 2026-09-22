@@ -1,0 +1,9 @@
+.plannerToolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  background-color: var(--element-color);
+}

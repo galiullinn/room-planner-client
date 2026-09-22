@@ -1,0 +1,10 @@
+.plannerFooter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+  width: 100%;
+  height: var(--footer-height);
+  padding-inline: 20px;
+  background-color: var(--element-color);
+}
