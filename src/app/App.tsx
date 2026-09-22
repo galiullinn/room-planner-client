@@ -1,11 +1,10 @@
-import { Link } from "react-router";
-import { AppRouter } from "./AppRouter";
+import { AppRouter } from "./router/AppRouter";
+import { Navbar } from "@/widgets/navbar";
 
 export const App = () => {
   return (
     <div className="app">
-      <Link to={"/"}>Planner</Link>
-      <Link to={"/guide"}>Guide</Link>
+      <Navbar />
       <div className="content">
         <AppRouter />
       </div>

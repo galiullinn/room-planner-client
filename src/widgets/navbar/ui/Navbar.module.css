@@ -1,0 +1,9 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 10px;
+  width: 100%;
+  height: var(--navbar-height);
+  padding-inline: 20px;
+}
