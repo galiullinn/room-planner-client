@@ -1,5 +1,6 @@
-import { toggleGridVisible, useGridVisible } from "@/entities/scene";
+import { toggleGridVisible } from "@/entities/scene";
 import { Button } from "@/shared/ui/button";
+import GridVisibleIcon from "@/shared/assets/icons/grid-visible-icon.svg?react";
 import styles from "./GridVisibleSwitcher.module.css";
 
 interface GridVisibleSwitcherProps {
@@ -8,14 +9,13 @@ interface GridVisibleSwitcherProps {
 
 export const GridVisibleSwitcher = (props: GridVisibleSwitcherProps) => {
   const { className } = props;
-  const gridVisible = useGridVisible();
 
   return (
     <Button 
       className={`${styles.gridVisibleSwitcher} ${className ?? ""}`}
       onClick={toggleGridVisible}
     >
-      {gridVisible ? "ON" : "OFF"}
+      <GridVisibleIcon width={20} /> 
     </Button>
   );
 };

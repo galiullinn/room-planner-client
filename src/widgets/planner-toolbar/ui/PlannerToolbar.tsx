@@ -1,5 +1,6 @@
 import { ViewModeSwitcher } from "@/features/view-mode-switcher";
 import { GridVisibleSwitcher } from "@/features/grid-visible-switcher";
+import { TransformModeSwitcher } from "@/features/transform-mode-switcher";
 import styles from "./PlannerToolbar.module.css";
 
 interface PlannerToolbarProps {
@@ -13,6 +14,7 @@ export const PlannerToolbar = (props: PlannerToolbarProps) => {
     <div className={`${styles.plannerToolbar} ${className ?? ""}`}>
       <ViewModeSwitcher />
       <GridVisibleSwitcher />
+      <TransformModeSwitcher />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { useState, type ReactNode } from "react";
 import { Group } from "three";
 import { TransformControls } from "@react-three/drei";
 import { Select } from "@react-three/postprocessing";
+import { useTransformMode } from "@/entities/scene";
 
 interface ObjectInteractionProps {
   object: SceneObject;
@@ -14,6 +15,7 @@ export const ObjectInteraction = (props: ObjectInteractionProps) => {
   const { object, children } = props;
   const [group, setGroup] = useState<Group | null>(null);
   const selectedId = useSelectedId();
+  const transformMode = useTransformMode();
 
   const isSelected = selectedId === object.id;
 
@@ -39,7 +41,7 @@ export const ObjectInteraction = (props: ObjectInteractionProps) => {
       {isSelected && !object.locked && group && (
         <TransformControls 
           object={group}
-          mode="translate"
+          mode={transformMode}
         />
       )}
     </>
