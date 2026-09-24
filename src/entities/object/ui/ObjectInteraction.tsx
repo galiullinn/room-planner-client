@@ -4,7 +4,7 @@ import { useState, type ReactNode } from "react";
 import { Group } from "three";
 import { TransformControls } from "@react-three/drei";
 import { Select } from "@react-three/postprocessing";
-import { useTransformMode } from "@/entities/scene";
+import { useGridStep, useSnapToGrid, useTransformMode } from "@/entities/scene";
 
 interface ObjectInteractionProps {
   object: SceneObject;
@@ -16,6 +16,8 @@ export const ObjectInteraction = (props: ObjectInteractionProps) => {
   const [group, setGroup] = useState<Group | null>(null);
   const selectedId = useSelectedId();
   const transformMode = useTransformMode();
+  const snapToGrid = useSnapToGrid();
+  const gridStep = useGridStep();
 
   const isSelected = selectedId === object.id;
 
@@ -42,6 +44,7 @@ export const ObjectInteraction = (props: ObjectInteractionProps) => {
         <TransformControls 
           object={group}
           mode={transformMode}
+          translationSnap={snapToGrid ? gridStep : null}
         />
       )}
     </>

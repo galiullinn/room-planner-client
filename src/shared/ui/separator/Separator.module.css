@@ -1,0 +1,8 @@
+.separator {
+  display: block;
+  width: 1px;
+  height: var(--input-height);
+  flex: 0 0 1px;
+  background-color: var(--font-color);
+  opacity: 0.25;
+}

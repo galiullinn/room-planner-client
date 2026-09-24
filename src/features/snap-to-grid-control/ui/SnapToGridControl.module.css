@@ -1,0 +1,7 @@
+.snapToGridControl {
+  width: 200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+}
