@@ -3,6 +3,7 @@ import { selectObject, useSelectedId } from "../model/object.store";
 import { useState, type ReactNode } from "react";
 import { Group } from "three";
 import { TransformControls } from "@react-three/drei";
+import { Select } from "@react-three/postprocessing";
 
 interface ObjectInteractionProps {
   object: SceneObject;
@@ -18,18 +19,22 @@ export const ObjectInteraction = (props: ObjectInteractionProps) => {
 
   return (
     <>
-      <group
-        ref={setGroup}
+      <Select 
+        enabled={isSelected}
         position={object.transform.position}
         rotation={object.transform.rotation}
         scale={object.transform.scale}
-        onClick={(event) => {
-          event.stopPropagation();
-          selectObject(object.id);
-        }}
       >
-        {children}
-      </group> 
+        <group
+          ref={setGroup}
+          onClick={(event) => {
+            event.stopPropagation();
+            selectObject(object.id);
+          }}
+        >
+          {children}
+        </group> 
+      </Select>
 
       {isSelected && !object.locked && group && (
         <TransformControls 
