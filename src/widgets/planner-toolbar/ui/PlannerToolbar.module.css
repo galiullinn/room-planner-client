@@ -1,9 +1,17 @@
 .plannerToolbar {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  flex-wrap: nowrap;
   column-gap: 10px;
+  min-width: 0;
+  overflow-x: auto;
   padding: 10px;
   border-radius: var(--border-radius);
   background-color: var(--element-color);
+  touch-action: pan-x;
+}
+
+.plannerToolbar > * {
+  flex: 0 0 auto;
 }

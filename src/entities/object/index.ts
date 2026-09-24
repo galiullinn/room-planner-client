@@ -3,7 +3,8 @@ export {
   useSelectedId,
   addObject,
   removeObject,
-  selectObject  
+  selectObject,
+  updateTransform,
 } from "./model/object.store";
 
 export { ObjectList } from "./ui/ObjectList";

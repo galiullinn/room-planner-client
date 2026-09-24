@@ -47,6 +47,8 @@
       var(--sidebar-height-mobile) + 
       var(--toolbar-gap)
     );
+    left: var(--toolbar-gap);
+    right: var(--toolbar-gap);
     transition: bottom 0.2s ease;
   }
 

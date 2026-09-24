@@ -2,8 +2,8 @@ import { ViewModeSwitcher } from "@/features/view-mode-switcher";
 import { GridVisibleSwitcher } from "@/features/grid-visible-switcher";
 import { TransformModeSwitcher } from "@/features/transform-mode-switcher";
 import { SnapToGridControl } from "@/features/snap-to-grid-control";
-import styles from "./PlannerToolbar.module.css";
 import { Separator } from "@/shared/ui/separator";
+import styles from "./PlannerToolbar.module.css";
 
 interface PlannerToolbarProps {
   className?: string;

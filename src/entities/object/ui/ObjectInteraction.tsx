@@ -1,5 +1,5 @@
 import type { SceneObject } from "../model/types";
-import { selectObject, useSelectedId } from "../model/object.store";
+import { selectObject, updateTransform, useSelectedId } from "../model/object.store";
 import { useState, type ReactNode } from "react";
 import { Group } from "three";
 import { TransformControls } from "@react-three/drei";
@@ -14,6 +14,7 @@ interface ObjectInteractionProps {
 export const ObjectInteraction = (props: ObjectInteractionProps) => {
   const { object, children } = props;
   const [group, setGroup] = useState<Group | null>(null);
+
   const selectedId = useSelectedId();
   const transformMode = useTransformMode();
   const snapToGrid = useSnapToGrid();
@@ -21,16 +22,25 @@ export const ObjectInteraction = (props: ObjectInteractionProps) => {
 
   const isSelected = selectedId === object.id;
 
+  const handleTransform = () => {
+    if (!group) return;
+    updateTransform(object.id, {
+      position: [group.position.x, group.position.y, group.position.z],
+      rotation: [group.rotation.x, group.rotation.y, group.rotation.z],
+      scale: [group.scale.x, group.scale.y, group.scale.z],
+    });
+  };
+
   return (
     <>
       <Select 
         enabled={isSelected}
-        position={object.transform.position}
-        rotation={object.transform.rotation}
-        scale={object.transform.scale}
       >
         <group
           ref={setGroup}
+          position={object.transform.position}
+          rotation={object.transform.rotation}
+          scale={object.transform.scale}
           onClick={(event) => {
             event.stopPropagation();
             selectObject(object.id);
@@ -45,6 +55,7 @@ export const ObjectInteraction = (props: ObjectInteractionProps) => {
           object={group}
           mode={transformMode}
           translationSnap={snapToGrid ? gridStep : null}
+          onMouseUp={handleTransform}
         />
       )}
     </>
